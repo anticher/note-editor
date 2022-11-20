@@ -1,8 +1,11 @@
 .App {
   width: 100vw;
   min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
   background-color: aquamarine;
-  &-header {
+  &__header {
     background-color: red;
   }
 }
