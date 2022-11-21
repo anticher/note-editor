@@ -1,16 +1,17 @@
-import { useContext } from "react";
 import { useState } from "react";
 import Box from "@mui/material/Box";
 import TextField from "@mui/material/TextField";
 import Button from "@mui/material/Button";
-import { DataContext } from "../data/data";
+import { useAppDispatch } from "../app/app-hooks";
+import { addNewNote } from "../app/notes/notes.slice";
 
 function NoteInput() {
-  const [data, setters] = useContext(DataContext);
+  const dispatch = useAppDispatch();
+
   const [text, setText] = useState("");
 
   const handleAddButtonClick = () => {
-    setters.setNotes([...data.notes, {id: data.notes[data.notes.length - 1].id + 1, value: text}]);
+    dispatch(addNewNote(text));
     setText("");
   };
 
