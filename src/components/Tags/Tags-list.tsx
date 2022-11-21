@@ -24,7 +24,7 @@ function TagsList() {
         p: 1,
         bgcolor: "background.paper",
         overflow: "auto",
-        maxHeight: 120,
+        maxHeight: 140,
         backgroundColor: "transparent",
         border: 1,
         borderRadius: "4px",

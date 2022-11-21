@@ -15,7 +15,7 @@ export interface INotesDataState {
 export const initialState: INotesDataState = {
   notes: [],
   tags: [],
-  filterTag: ''
+  filterTag: "",
 };
 
 export const notesSlice = createSlice({
@@ -55,13 +55,20 @@ export const notesSlice = createSlice({
       state.filterTag = action.payload;
     },
     resetFilter: (state, action: PayloadAction<void>) => {
-      state.filterTag = '';
+      state.filterTag = "";
     },
   },
 });
 
-export const { addNewNote, updateNote, addNewTag, deleteTag, deleteNote, setFilter, resetFilter } =
-  notesSlice.actions;
+export const {
+  addNewNote,
+  updateNote,
+  addNewTag,
+  deleteTag,
+  deleteNote,
+  setFilter,
+  resetFilter,
+} = notesSlice.actions;
 
 export const selectNotes = (state: RootState) => state.notes;
 

@@ -5,12 +5,11 @@
 }
 
 .renderer {
-    padding: 0;
+    padding: 4px;
     margin: 0;
     line-height: 1.4375em;
     position: absolute;
     display: block;
-    background-color: rgb(227, 227, 227);
     word-wrap: break-word;
     white-space: pre-wrap;
     overflow: scroll;
@@ -18,17 +17,19 @@
 }
 
 .highlighted {
-    background-color: rgb(170, 170, 255);
+    background-color: #00b4d8;
 }
 
 .input {
-    padding: 0;
+    padding: 0px;
     margin: 0;
     width: 100%;
     left: 0;
     top: 0;
+    border-radius: 4px;
+    box-shadow: 0 0 10px #1e2f97;
     & > div {
-        padding: 0;
+        padding: 4px;
         margin: 0;
     }
 }

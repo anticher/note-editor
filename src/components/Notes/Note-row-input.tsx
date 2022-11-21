@@ -66,7 +66,7 @@ function NoteRowInput({
           />
         </div>
       ) : (
-        <ListItemText primary={currentNote.value} />
+        <ListItemText sx={{ p: "4px" }} primary={currentNote.value} />
       )}
     </Box>
   );
