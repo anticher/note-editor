@@ -9,6 +9,10 @@ import NoteRow from "./Note-row";
 function NotesList() {
   const notesData = useAppSelector((state) => state.notes);
 
+  let filteredNotes = notesData.notes.filter((note) =>
+    note.value.includes(notesData.filterTag)
+  );
+
   const content = (
     <List
       sx={{
@@ -24,7 +28,7 @@ function NotesList() {
         },
       }}
     >
-      {notesData.notes.map((note, index) => (
+      {filteredNotes.map((note, index) => (
         <Box key={note.id}>
           {index ? <Divider /> : null}
           <NoteRow noteId={note.id} />
@@ -44,7 +48,7 @@ function NotesList() {
       <Typography variant="h2" gutterBottom fontSize={24}>
         Notes
       </Typography>
-      {notesData.notes.length ? content : noItemsAlert}
+      {filteredNotes.length ? content : noItemsAlert}
     </Box>
   );
 }

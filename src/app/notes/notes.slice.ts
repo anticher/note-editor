@@ -9,11 +9,13 @@ export interface INote {
 export interface INotesDataState {
   notes: INote[];
   tags: string[];
+  filterTag: string;
 }
 
 export const initialState: INotesDataState = {
   notes: [],
   tags: ["item1", "item2"],
+  filterTag: ''
 };
 
 export const notesSlice = createSlice({
@@ -49,10 +51,16 @@ export const notesSlice = createSlice({
     deleteTag: (state, action: PayloadAction<string>) => {
       state.tags = state.tags.filter((tag) => tag !== action.payload);
     },
+    setFilter: (state, action: PayloadAction<string>) => {
+      state.filterTag = action.payload;
+    },
+    resetFilter: (state, action: PayloadAction<void>) => {
+      state.filterTag = '';
+    },
   },
 });
 
-export const { addNewNote, updateNote, addNewTag, deleteTag, deleteNote } =
+export const { addNewNote, updateNote, addNewTag, deleteTag, deleteNote, setFilter, resetFilter } =
   notesSlice.actions;
 
 export const selectNotes = (state: RootState) => state.notes;
