@@ -27,7 +27,7 @@ function NotesList() {
       {notesData.notes.map((note, index) => (
         <Box key={note.id}>
           {index ? <Divider /> : null}
-          <NoteRow note={note} />
+          <NoteRow noteId={note.id} />
         </Box>
       ))}
     </List>

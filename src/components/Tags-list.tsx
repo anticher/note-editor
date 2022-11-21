@@ -28,7 +28,7 @@ function TagsList() {
           },
         }}
       >
-        {notesData.tags.map((tag) => <TagRow key={tag.id} tag={tag} />)}
+        {notesData.tags.map((tag) => <TagRow key={tag} tag={tag} />)}
       </List>
     </Box>
   );
