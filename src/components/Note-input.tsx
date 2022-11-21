@@ -23,8 +23,8 @@ function NoteInput() {
   };
 
   return (
-    <Box sx={{ p: 2, display: "flex" }}>
-      <Box sx={{ m: 1, width: "100%" }}>
+    <Box sx={{ mb: 2, display: "flex" }}>
+      <Box sx={{ mr: 1, width: "100%" }}>
         <TextField
           fullWidth
           label="New note"
@@ -35,7 +35,7 @@ function NoteInput() {
           }}
         />
       </Box>
-      <Box sx={{ m: 1, display: "flex", alignItems: "flex-end" }}>
+      <Box sx={{ display: "flex", alignItems: "flex-end" }}>
         <Button
           variant="contained"
           onClick={handleAddButtonClick}
