@@ -18,7 +18,10 @@ export interface INotesDataState {
 
 export const initialState: INotesDataState = {
   notes: [],
-  tags: [{id: 4, value: "item4"}, {id: 5, value: "item5"}],
+  tags: [
+    { id: 4, value: "item4" },
+    { id: 5, value: "item5" },
+  ],
 };
 
 export const notesSlice = createSlice({
@@ -26,16 +29,21 @@ export const notesSlice = createSlice({
   initialState,
   reducers: {
     addNewNote: (state, action: PayloadAction<string>) => {
-      const lastId = state.notes.length ? state.notes[state.notes.length - 1].id : -1;
+      const lastId = state.notes.length
+        ? state.notes[state.notes.length - 1].id
+        : -1;
       state.notes.push({ id: lastId + 1, value: action.payload });
     },
     deleteTag: (state, action: PayloadAction<number>) => {
-        state.tags = state.tags.filter((tag) => tag.id !== action.payload)
-      },
+      state.tags = state.tags.filter((tag) => tag.id !== action.payload);
+    },
+    deleteNote: (state, action: PayloadAction<number>) => {
+      state.notes = state.notes.filter((note) => note.id !== action.payload);
+    },
   },
 });
 
-export const { addNewNote, deleteTag } = notesSlice.actions;
+export const { addNewNote, deleteTag, deleteNote } = notesSlice.actions;
 
 export const selectNotes = (state: RootState) => state.notes;
 
