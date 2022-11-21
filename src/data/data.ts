@@ -1,13 +1,23 @@
 import { createContext, Dispatch, SetStateAction } from "react";
 
+export interface INote {
+  id: number;
+  value: string;
+}
+
+export interface ITag {
+  id: number;
+  value: string;
+}
+
 interface IData {
-  notes: string[];
-  tags: string[];
+  notes: INote[];
+  tags: ITag[];
 }
 
 interface IDataSetters {
-  setNotes: Dispatch<SetStateAction<string[]>>;
-  setTags: Dispatch<SetStateAction<string[]>>;
+  setNotes: Dispatch<SetStateAction<INote[]>>;
+  setTags: Dispatch<SetStateAction<ITag[]>>;
 }
 
 type DataContextType = [IData, IDataSetters];

@@ -2,11 +2,12 @@ import { useState } from "react";
 import "./App.scss";
 import { Container } from "@mui/system";
 import NoteInput from "./components/Note-input";
-import { DataContext } from "./data/data";
+import { DataContext, INote, ITag } from "./data/data";
+import TagsList from "./components/Tags-list";
 
 function App() {
-  const [notes, setNotes] = useState<string[]>([]);
-  const [tags, setTags] = useState<string[]>([]);
+  const [notes, setNotes] = useState<INote[]>([]);
+  const [tags, setTags] = useState<ITag[]>([{id: 1, value: "item1"}, {id: 2, value: "item2"}]);
 
   return (
     <div className="App">
@@ -14,6 +15,7 @@ function App() {
         <header className="App__header">123</header>
         <Container maxWidth="sm">
           <NoteInput />
+          <TagsList />
         </Container>
       </DataContext.Provider>
     </div>

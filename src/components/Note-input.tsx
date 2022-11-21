@@ -10,7 +10,7 @@ function NoteInput() {
   const [text, setText] = useState("");
 
   const handleAddButtonClick = () => {
-    setters.setNotes([...data.notes, text]);
+    setters.setNotes([...data.notes, {id: data.notes[data.notes.length - 1].id + 1, value: text}]);
     setText("");
   };
 
