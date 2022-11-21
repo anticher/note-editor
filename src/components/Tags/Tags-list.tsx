@@ -7,8 +7,8 @@ import Divider from "@mui/material/Divider";
 import Typography from "@mui/material/Typography";
 import IconButton from "@mui/material/IconButton";
 import FilterAltOffIcon from "@mui/icons-material/FilterAltOff";
-import { useAppDispatch, useAppSelector } from "../app/app-hooks";
-import { resetFilter } from "../app/notes/notes.slice";
+import { useAppDispatch, useAppSelector } from "../../app/app-hooks";
+import { resetFilter } from "../../app/notes/notes.slice";
 
 function TagsList() {
   const notesData = useAppSelector((state) => state.notes);

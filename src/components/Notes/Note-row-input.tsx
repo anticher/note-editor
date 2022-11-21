@@ -3,7 +3,7 @@ import Box from "@mui/material/Box";
 import ListItemText from "@mui/material/ListItemText";
 import TextField from "@mui/material/TextField";
 import { ChangeEvent, Dispatch, SetStateAction } from "react";
-import { useAppSelector } from "../app/app-hooks";
+import { useAppSelector } from "../../app/app-hooks";
 
 type NoteRowInputPropsType = {
   noteId: number;

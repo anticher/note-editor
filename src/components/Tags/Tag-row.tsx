@@ -4,8 +4,8 @@ import LabelIcon from "@mui/icons-material/Label";
 import IconButton from "@mui/material/IconButton";
 import FilterAltIcon from "@mui/icons-material/FilterAlt";
 import DeleteForeverIcon from "@mui/icons-material/DeleteForever";
-import { deleteTag, setFilter } from "../app/notes/notes.slice";
-import { useAppDispatch } from "../app/app-hooks";
+import { deleteTag, setFilter } from "../../app/notes/notes.slice";
+import { useAppDispatch } from "../../app/app-hooks";
 
 type TagRowPropsType = {
   tag: string;

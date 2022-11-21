@@ -2,8 +2,8 @@ import { useState } from "react";
 import Box from "@mui/material/Box";
 import TextField from "@mui/material/TextField";
 import Button from "@mui/material/Button";
-import { useAppDispatch } from "../app/app-hooks";
-import { addNewNote, addNewTag } from "../app/notes/notes.slice";
+import { useAppDispatch } from "../../app/app-hooks";
+import { addNewNote, addNewTag } from "../../app/notes/notes.slice";
 
 function NoteInput() {
   const dispatch = useAppDispatch();

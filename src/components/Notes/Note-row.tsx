@@ -3,8 +3,8 @@ import ListItem from "@mui/material/ListItem";
 import IconButton from "@mui/material/IconButton";
 import BuildIcon from "@mui/icons-material/Build";
 import DeleteForeverIcon from "@mui/icons-material/DeleteForever";
-import { addNewTag, deleteNote, updateNote } from "../app/notes/notes.slice";
-import { useAppDispatch, useAppSelector } from "../app/app-hooks";
+import { addNewTag, deleteNote, updateNote } from "../../app/notes/notes.slice";
+import { useAppDispatch, useAppSelector } from "../../app/app-hooks";
 import NoteRowInput from "./Note-row-input";
 
 function NoteRow({ noteId }: { noteId: number }) {

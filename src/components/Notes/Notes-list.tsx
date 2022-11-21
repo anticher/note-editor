@@ -3,7 +3,7 @@ import List from "@mui/material/List";
 import Typography from "@mui/material/Typography";
 import Alert from "@mui/material/Alert";
 import Divider from "@mui/material/Divider";
-import { useAppSelector } from "../app/app-hooks";
+import { useAppSelector } from "../../app/app-hooks";
 import NoteRow from "./Note-row";
 
 function NotesList() {
