@@ -1,5 +1,6 @@
 import Box from "@mui/material/Box";
 import List from "@mui/material/List";
+import Alert from "@mui/material/Alert";
 import TagRow from "./Tag-row";
 import Typography from "@mui/material/Typography";
 import { useAppSelector } from "../app/app-hooks";
@@ -7,13 +8,8 @@ import { useAppSelector } from "../app/app-hooks";
 function TagsList() {
   const notesData = useAppSelector((state) => state.notes);
 
-  if (!notesData.tags.length) return null
-  return (
-    <Box sx={{ p: 2 }}>
-      <Typography variant="h2" gutterBottom fontSize={24}>
-        Tags
-      </Typography>
-      <List
+  const content = (
+    <List
         sx={{
           p: 1,
           bgcolor: "background.paper",
@@ -30,6 +26,21 @@ function TagsList() {
       >
         {notesData.tags.map((tag) => <TagRow key={tag} tag={tag} />)}
       </List>
+  );
+
+  const noTagsAlert = (
+    <Alert variant="outlined" severity="info">
+      No tags
+    </Alert>
+  );
+
+
+  return (
+    <Box sx={{ mb: 2 }}>
+      <Typography variant="h2" gutterBottom fontSize={24}>
+        Tags
+      </Typography>
+      {notesData.tags.length ? content : noTagsAlert}
     </Box>
   );
 }
