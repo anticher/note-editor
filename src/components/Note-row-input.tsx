@@ -30,15 +30,18 @@ function NoteRowInput({
   };
 
   const showTextWithHighlightedTags = (text: string) => {
-    const textArr = text.split(" ").join(', ').split(",");
+    const textArr = text.split(" ");
     const highlightedSpansArr = textArr.map((word, index) =>
-      word.trim().startsWith("#") && word.trim().length > 2 ? (
-        <span className={styles.highlighted} key={word + index}>{word}</span>
+      word.startsWith("#") && word.length > 2 ? (
+        <span key={word + index}>
+          {index && <span> </span>}
+          <span className={styles.highlighted}>{word}</span>
+        </span>
       ) : (
-        <span key={word + index}>{word}</span>
+        <span key={word + index}>{index ? " " + word : word}</span>
       )
     );
-    return highlightedSpansArr
+    return highlightedSpansArr;
   };
 
   return (

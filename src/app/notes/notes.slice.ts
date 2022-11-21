@@ -14,7 +14,7 @@ export interface INotesDataState {
 
 export const initialState: INotesDataState = {
   notes: [],
-  tags: ["item1", "item2"],
+  tags: [],
   filterTag: ''
 };
 

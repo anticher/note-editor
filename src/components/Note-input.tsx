@@ -3,7 +3,7 @@ import Box from "@mui/material/Box";
 import TextField from "@mui/material/TextField";
 import Button from "@mui/material/Button";
 import { useAppDispatch } from "../app/app-hooks";
-import { addNewNote } from "../app/notes/notes.slice";
+import { addNewNote, addNewTag } from "../app/notes/notes.slice";
 
 function NoteInput() {
   const dispatch = useAppDispatch();
@@ -12,6 +12,13 @@ function NoteInput() {
 
   const handleAddButtonClick = () => {
     dispatch(addNewNote(text));
+    const textArr = text.split(" ");
+    const newTags = textArr.filter(
+      (word) => word.startsWith("#") && word.length > 2
+    );
+    newTags.forEach((tag) => {
+      dispatch(addNewTag(tag));
+    });
     setText("");
   };
 
